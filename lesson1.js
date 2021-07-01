@@ -11,8 +11,8 @@ if (isNaN(n) || isNaN(m)) {
 }
 
 const calcSimple = (n) => {
-  if (n === 2 || n === 3) return true;
-  if (n % 2 === 0) return false;
+  if (n === 2 || n === 3 ) return true;
+  if (n % 2 === 0 || n % 3 === 0 || n % 7 === 0) return false;
   for (let i = 3, s = n ** 0.5; i < s; i += 2) {
     if (n % i == 0) return false;
   }
