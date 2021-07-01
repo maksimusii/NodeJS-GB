@@ -9,11 +9,19 @@ if (isNaN(n) || isNaN(m)) {
   console.log("В качестве аргументов переданны не числа");
   process.exit(-1);
 }
-for (let i = n; i <= m; i++) {
-  if ((i%2 === 0) || (i%3 === 0)) {
-    continue;
+
+const calcSimple = (n) => {
+  if (n === 2 || n === 3) return true;
+  if (n % 2 === 0) return false;
+  for (let i = 3, s = n ** 0.5; i < s; i += 2) {
+    if (n % i == 0) return false;
   }
-  isSimple = true;
+  return true;
+};
+
+for(let i = n; i <= m; i++){
+  if (calcSimple(i)) {
+    isSimple = true;
   switch(z) {
     case 1: 
     console.log(clc.green(i));
@@ -28,8 +36,8 @@ for (let i = n; i <= m; i++) {
     z = 1;
     break;
   };
-};
-if (!isSimple) {
-  console.log("Простых чисел в диапозоне нет");
+  }
 }
-
+if (!isSimple) {
+     console.log(clc.red("Простых чисел в диапозоне нет"));
+   }

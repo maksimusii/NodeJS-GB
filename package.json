@@ -9,6 +9,7 @@
   "author": "Maksim Karpov",
   "license": "ISC",
   "dependencies": {
-    "cli-color": "^2.0.0"
+    "cli-color": "^2.0.0",
+    "mathjs": "^9.4.3"
   }
 }
